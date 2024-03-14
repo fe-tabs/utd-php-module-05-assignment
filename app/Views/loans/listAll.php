@@ -88,6 +88,13 @@
             </tbody>
           </table>
         </div>
+        <div class="card-footer">
+          <nav>
+            <ul class="pagination">
+
+            </ul>
+          </nav>
+        </div>
       </div>
     </main>
     
