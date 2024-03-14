@@ -25,6 +25,13 @@ class UserController extends BaseController
         return view('users/listAll', $data);
     }
 
+    public  function  update($id) 
+    {
+        $data['update'] =  $this->model->find($id);
+        
+        return  view('users/update',  $data);   
+    }
+
     public  function  save()
     {
         $this->model->save($_POST);
