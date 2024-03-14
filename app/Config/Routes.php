@@ -19,5 +19,6 @@ $routes->post('/users/update/(:any)', 'UserController::update/$1');
 $routes->post('/users/delete/(:any)', 'UserController::delete/$1');
 $routes->post('/users/save', 'UserController::save');
 
+$routes->get('/loans', 'LoanController::listAll');
 $routes->post('/loans/new/(:any)', 'LoanController::add/$1');
 $routes->post('/loans/save', 'LoanController::save');

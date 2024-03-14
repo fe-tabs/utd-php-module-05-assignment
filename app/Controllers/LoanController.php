@@ -21,6 +21,26 @@ class LoanController extends BaseController
         return view('loans/add', $data);
     }
 
+    public function listAll()
+    {
+        $db = \Config\Database::connect();
+
+        $builder = $db->table('loans');
+        $builder->select('
+            loans.id,
+            users.name as userName,
+            books.title as bookTitle,
+            loans.is_returned,
+            loans.loan_date,
+            loans.return_date
+        ');
+        $builder->join('users', 'users.id = loans.user_id');
+        $builder->join('books', 'books.id = loans.book_id');
+        $data['listAll'] = $builder->get()->getResultArray();
+
+        return view('loans/listAll', $data);
+    }
+
     public function save() 
     {
         $this->model->save($_POST);
