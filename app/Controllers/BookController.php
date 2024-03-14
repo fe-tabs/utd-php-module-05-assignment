@@ -30,6 +30,11 @@ class BookController extends BaseController
 
         return view('books/update', $data);
     }
+    public function delete($id) {
+        $this->model->delete($id);
+
+        return redirect()->to('books');
+    }
 
     public function save() 
     {

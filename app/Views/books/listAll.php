@@ -66,6 +66,24 @@
                             value="Editar"
                           />
                         </form>
+
+                      <form 
+                        action="<?php $baseURL;?>/books/delete/<?=$book['id']?>" 
+                        method="POST"
+                      >
+                          <input 
+                            id="id"
+                            name="id"
+                            type="hidden"
+                            value="<?=$book['id']?>"
+                          />
+
+                          <input 
+                            class="btn btn-danger fs-4" 
+                            type="submit" 
+                            value="Excluir"
+                          />
+                        </form>
                     </div>
                   </div>
                 </div>
