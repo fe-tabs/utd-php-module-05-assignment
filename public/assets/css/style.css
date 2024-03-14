@@ -1,0 +1,22 @@
+/* COVER IMAGE SIZE RESPONSIVITY */
+
+.book-cover img {
+  height: 12rem;
+  width: 9rem;
+  object-fit: cover;
+}
+
+@media (max-width: 576px) {
+  .book-cover img {
+    height: auto;
+    width: 100%;
+  }
+}
+
+@media (min-width: 768px) {
+  .book-cover img {
+    height: 18rem;
+    width: auto;
+  }
+}
+
