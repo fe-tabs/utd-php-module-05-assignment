@@ -21,4 +21,5 @@ $routes->post('/users/save', 'UserController::save');
 
 $routes->get('/loans', 'LoanController::listAll');
 $routes->post('/loans/new/(:any)', 'LoanController::add/$1');
+$routes->post('/loans/update/(:any)', 'LoanController::update/$1');
 $routes->post('/loans/save', 'LoanController::save');

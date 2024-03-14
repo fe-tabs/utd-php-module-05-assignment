@@ -41,6 +41,14 @@ class LoanController extends BaseController
         return view('loans/listAll', $data);
     }
 
+    public function update($id) 
+    {
+        $data['update'] = $this->model->find($id);
+        $data['users'] = (new UserModel())->findAll();
+        
+        return view('loans/update', $data);   
+    }
+
     public function save() 
     {
         $this->model->save($_POST);
