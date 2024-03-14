@@ -49,6 +49,13 @@ class LoanController extends BaseController
         return view('loans/update', $data);   
     }
 
+    public function delete($id) 
+    {
+        $this->model->delete($id);
+    
+        return  redirect()->to('loans');
+    }
+
     public function save() 
     {
         $this->model->save($_POST);
