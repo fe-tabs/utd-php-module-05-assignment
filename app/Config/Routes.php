@@ -5,7 +5,7 @@ use CodeIgniter\Router\RouteCollection;
 /**
  * @var RouteCollection $routes
  */
-$routes->get('/', 'Home::index');
+$routes->get('/', 'BookController::listAll');
 
 $routes->get('/books', 'BookController::listAll');
 $routes->get('/books/new', 'BookController::add');
