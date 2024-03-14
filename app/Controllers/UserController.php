@@ -13,13 +13,22 @@ class UserController extends BaseController
         $this->model = new UserModel();
     }
 
-    public function listAll()
-
+    public  function  add()
     {
+        return  view('users/add');
+    }
 
-    $data['listAll'] = $this->model->findAll();
+    public function listAll()
+    {
+        $data['listAll'] = $this->model->findAll();
 
-    return view('users/listAll', $data);
+        return view('users/listAll', $data);
+    }
 
+    public  function  save()
+    {
+        $this->model->save($_POST);
+
+        return  redirect()->to('users');
     }
 }
