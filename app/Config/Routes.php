@@ -18,3 +18,6 @@ $routes->get('/users/new', 'UserController::add');
 $routes->post('/users/update/(:any)', 'UserController::update/$1');
 $routes->post('/users/delete/(:any)', 'UserController::delete/$1');
 $routes->post('/users/save', 'UserController::save');
+
+$routes->post('/loans/new/(:any)', 'LoanController::add/$1');
+$routes->post('/loans/save', 'LoanController::save');
