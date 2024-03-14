@@ -12,12 +12,24 @@ class BookController extends BaseController
     {
         $this->model = new BookModel();
     }
+
+    public function add() 
+    {
+        return view('books/add');    
+    }
     
     public function listAll()
     {
         $data['listAll'] = $this->model->findAll();
         
         return view('books/listAll', $data);
+    }
+
+    public function save() 
+    {
+        $this->model->save($_POST);
+
+        return redirect()->to('books');
     }
 
 }
