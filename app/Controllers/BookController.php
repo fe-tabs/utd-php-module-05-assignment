@@ -25,6 +25,12 @@ class BookController extends BaseController
         return view('books/listAll', $data);
     }
 
+    public function update($id) {
+        $data['update'] = $this->model->find($id);
+
+        return view('books/update', $data);
+    }
+
     public function save() 
     {
         $this->model->save($_POST);

@@ -49,6 +49,23 @@
                     </div>
     
                     <div class="d-flex gap-3 justify-content-end mt-3">
+                      <form 
+                        action="<?php $baseURL;?>/books/update/<?=$book['id']?>" 
+                        method="POST"
+                      >
+                          <input 
+                            id="id"
+                            name="id"
+                            type="hidden"
+                            value="<?=$book['id']?>"
+                          />
+
+                          <input 
+                            class="btn btn-primary fs-4" 
+                            type="submit" 
+                            value="Editar"
+                          />
+                        </form>
                     </div>
                   </div>
                 </div>
