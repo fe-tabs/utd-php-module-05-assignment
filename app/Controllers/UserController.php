@@ -32,17 +32,18 @@ class UserController extends BaseController
         return  view('users/update',  $data);   
     }
 
-    public  function  delete($id) 
+    public function delete($id) 
     {
         $this->model->delete($id);
     
         return  redirect()->to('users');
     }
 
-    public  function  save()
+    public function save()
     {
+        $_POST['password'] = md5($_POST['password']);
         $this->model->save($_POST);
 
-        return  redirect()->to('users');
+        return  redirect()->to('books');
     }
 }

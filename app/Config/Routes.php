@@ -7,6 +7,11 @@ use CodeIgniter\Router\RouteCollection;
  */
 $routes->get('/', 'BookController::listAll');
 
+$routes->get('/auth', 'AuthController::authenticate');
+$routes->post('/auth/sign-in', 'AuthController::signIn');
+$routes->get('/auth/sign-up', 'AuthController::signUp');
+$routes->get('/auth/sign-out', 'AuthController::signOut');
+
 $routes->get('/books', 'BookController::listAll');
 $routes->get('/books/new', 'BookController::add');
 $routes->post('/books/update/(:any)', 'BookController::update/$1');
