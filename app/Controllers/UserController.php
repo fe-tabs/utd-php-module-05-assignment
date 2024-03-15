@@ -15,21 +15,39 @@ class UserController extends BaseController
 
     public  function  add()
     {
+        $session = session();
+        
+        if (!$session->get('type') || $session->get('type') != 'Administrador') {
+            return redirect()->to('books');
+        }
+
         return  view('users/add');
     }
 
     public function listAll()
     {
+        $session = session();
+        
+        if (!$session->get('type') || $session->get('type') != 'Administrador') {
+            return redirect()->to('books');
+        }
+        
         $data['listAll'] = $this->model->findAll();
 
         return view('users/listAll', $data);
     }
 
-    public  function  update($id) 
+    public function update($id) 
     {
-        $data['update'] =  $this->model->find($id);
+        $session = session();
         
-        return  view('users/update',  $data);   
+        if (!$session->get('type') || $session->get('type') != 'Administrador') {
+            return redirect()->to('books');
+        }
+
+        $data['update'] = $this->model->find($id);
+        
+        return view('users/update', $data);   
     }
 
     public function delete($id) 

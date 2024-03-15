@@ -16,6 +16,12 @@ class LoanController extends BaseController
 
     public function add($book_id)
     {
+        $session = session();
+
+        if (!$session->get('type') || $session->get('type') != 'Administrador') {
+            return redirect()->to('books');
+        }
+
         $data['book_id'] = $book_id;
         $data['users'] = (new UserModel())->findAll();
         return view('loans/add', $data);
@@ -23,6 +29,12 @@ class LoanController extends BaseController
 
     public function listAll()
     {
+        $session = session();
+        
+        if (!$session->get('type') || $session->get('type') != 'Administrador') {
+            return redirect()->to('books');
+        }
+
         $db = \Config\Database::connect();
 
         $builder = $db->table('loans');
@@ -43,6 +55,12 @@ class LoanController extends BaseController
 
     public function update($id) 
     {
+        $session = session();
+        
+        if (!$session->get('type') || $session->get('type') != 'Administrador') {
+            return redirect()->to('books');
+        }
+        
         $data['update'] = $this->model->find($id);
         $data['users'] = (new UserModel())->findAll();
         

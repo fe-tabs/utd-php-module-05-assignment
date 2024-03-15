@@ -15,6 +15,12 @@ class BookController extends BaseController
 
     public function add() 
     {
+        $session = session();
+        
+        if (!$session->get('type') || $session->get('type') != 'Administrador') {
+            return redirect()->to('books');
+        }
+
         return view('books/add');    
     }
     
@@ -26,6 +32,12 @@ class BookController extends BaseController
     }
 
     public function update($id) {
+        $session = session();
+        
+        if (!$session->get('type') || $session->get('type') != 'Administrador') {
+            return redirect()->to('books');
+        }
+        
         $data['update'] = $this->model->find($id);
 
         return view('books/update', $data);
