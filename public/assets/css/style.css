@@ -32,3 +32,10 @@
   }
 }
 
+/* NAVBAR WIDTH RESPONSIVITY */
+
+@media (min-width: 992px) {
+  .navbar-expand-lg .container-fluid{
+    max-width: 75%;
+  }
+}

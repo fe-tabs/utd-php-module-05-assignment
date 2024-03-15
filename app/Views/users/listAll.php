@@ -2,6 +2,8 @@
 
   use Config\App;
 
+  $session = session();
+
   $data = $listAll;
 
   for ($i=0; $i < count($data); $i++) { 
@@ -66,6 +68,133 @@
   </head>
 
   <body>
+    <header class="bg-primary d-flex justify-content-between p-2 sticky-top fs-5">
+      <nav class="nav navbar-expand-lg w-100" data-bs-theme="dark">
+        <div class="container-fluid order-lg-2">
+          <button 
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbar-navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+        </div>
+
+        <div id="navbar-navigation" class="collapse navbar-collapse order-lg-1 px-3 pt-1">
+          <div class="navbar-nav gap-3 text-white">
+            <a class="nav-link" href="<?php $baseURL;?>">Início</a>
+
+            <div class="dropdown">
+              <a href="#" role="button" class="nav-link" data-bs-toggle="dropdown">
+                Livros
+              </a>
+
+              <div class="dropdown-menu bg-primary px-3 py-2">
+                <a 
+                  href="<?php $baseURL;?>/books"
+                  class="dropdown-item nav-link bg-primary"
+                >
+                  Lista de Livros
+                </a>
+
+                <?php 
+                
+                  echo ($session->get('type') && $session->get('type') == 'Administrador') ? '
+                    <a 
+                      href="http://localhost:8080/books/new"
+                      class="dropdown-item nav-link bg-primary"
+                    >
+                      Adicionar Livro
+                    </a>
+                  ' : '';
+
+                ?>
+              </div>
+            </div>
+
+            <?php 
+            
+              echo ($session->get('type') && $session->get('type') == 'Administrador') ? '
+                <div class="dropdown">
+                  <a href="#" role="button" class="nav-link" data-bs-toggle="dropdown">
+                    Usuários
+                  </a>
+
+                  <div class="dropdown-menu bg-primary px-3 py-2">
+                    <a 
+                      href="http://localhost:8080/users"
+                      class="dropdown-item nav-link bg-primary"
+                    >
+                      Lista de Usuários
+                    </a>
+
+                    <a 
+                      href="http://localhost:8080/users/new"
+                      class="dropdown-item nav-link bg-primary"
+                    >
+                      Adicionar Usuário
+                    </a>
+                  </div>
+                </div>
+
+                <div class="dropdown">
+                  <a href="#" role="button" class="nav-link" data-bs-toggle="dropdown">
+                    Empréstimos
+                  </a>
+
+                  <div class="dropdown-menu bg-primary px-3 py-2">
+                    <a 
+                      href="http://localhost:8080/loans"
+                      class="dropdown-item nav-link bg-primary"
+                    >
+                      Lista de Empréstimos
+                    </a>
+                  </div>
+                </div>
+              ' : '';
+            
+            ?>
+
+            <div class="dropdown">
+              <a href="#" role="button" class="nav-link" data-bs-toggle="dropdown">
+                Autenticação
+              </a>
+
+              <div class="dropdown-menu bg-primary px-3 py-2">
+                <?php
+                
+                  
+                  echo ($session->get('name')) ? '
+                    <a 
+                      href="http://localhost:8080/auth/sign-out"
+                      class="dropdown-item nav-link bg-primary"
+                    >
+                      Sair
+                    </a>
+                  ' : '
+                    <a 
+                      href="http://localhost:8080/auth/sign-up"
+                      class="dropdown-item nav-link bg-primary"
+                    >
+                      Criar Conta
+                    </a>
+
+                    <a 
+                      href="http://localhost:8080/auth"
+                      class="dropdown-item nav-link bg-primary"
+                    >
+                      Entrar
+                    </a>
+                  ';
+                ?>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
     <main class="container py-4 h-100">
       <div class="card">
         <div class="card-body overflow-auto">
