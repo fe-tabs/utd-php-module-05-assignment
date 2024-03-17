@@ -1,68 +1,40 @@
-# CodeIgniter 4 Application Starter
+# UTD - Linguagem de Programação PHP | Exercício de Progressão de Módulo 5
 
-## What is CodeIgniter?
+## Universidade do Trabalho Digital (UTD)
 
-CodeIgniter is a PHP full-stack web framework that is light, fast, flexible and secure.
-More information can be found at the [official site](https://codeigniter.com).
+A Universidade do Trabalho Digital (UTD) é uma iniciativa do Governo do Estado 
+do Ceará, através da Secretaria da Ciência, Tecnologia e Educação Superior 
+(Secitece) que desenvolve as suas atividades em parceria com o Instituto 
+Centro de Ensino Tecnológico (CENTEC). Com cursos que vão desde uma formação 
+básica até níveis mais avançados, a UTD proporciona formação gratuita na área 
+de Tecnologia da Informação e Comunicação (TIC).
 
-This repository holds a composer-installable app starter.
-It has been built from the
-[development repository](https://github.com/codeigniter4/CodeIgniter4).
+## Curso Online Linguagem de Programação PHP
 
-More information about the plans for version 4 can be found in [CodeIgniter 4](https://forum.codeigniter.com/forumdisplay.php?fid=28) on the forums.
+O Curso Online Linguagem de Programação PHP ofertado pela Universidade do 
+Trabalho Digital possui carga horária de 120 horas e duração de 3 meses. Ele 
+aborda os principais conceitos e funcionalidades do PHP, uma linguagem de 
+programação utilizada por programadores e desenvolvedores para construir sites 
+dinâmicos, extensões de integração de aplicações e agilizar no desenvolvimento 
+de um sistema.
 
-You can read the [user guide](https://codeigniter.com/user_guide/)
-corresponding to the latest version of the framework.
+O Módulo V - Aplicando e Conhecendo Frameworks aborda:
+- Unidade I – Introdução a Frameworks PHP
+- Unidade II – Gerenciamento de Dependências com Composer
+- Unidade III – Estrutura e Instalação do CodeIgniter
+- Unidade IV – Estrutura e Instalação do Laravel
+- Unidade VI – Projeto Prático - Aplicação com um Framework PHP
 
-## Installation & updates
+## Aplicação
 
-`composer create-project codeigniter4/appstarter` then `composer update` whenever
-there is a new release of the framework.
+### Ferramentas e Tecnologias Utilizadas
 
-When updating, check the release notes to see if there are any changes you might need to apply
-to your `app` folder. The affected files can be copied or merged from
-`vendor/codeigniter4/framework/app`.
-
-## Setup
-
-Copy `env` to `.env` and tailor for your app, specifically the baseURL
-and any database settings.
-
-## Important Change with index.php
-
-`index.php` is no longer in the root of the project! It has been moved inside the *public* folder,
-for better security and separation of components.
-
-This means that you should configure your web server to "point" to your project's *public* folder, and
-not to the project root. A better practice would be to configure a virtual host to point there. A poor practice would be to point your web server to the project root and expect to enter *public/...*, as the rest of your logic and the
-framework are exposed.
-
-**Please** read the user guide for a better explanation of how CI4 works!
-
-## Repository Management
-
-We use GitHub issues, in our main repository, to track **BUGS** and to track approved **DEVELOPMENT** work packages.
-We use our [forum](http://forum.codeigniter.com) to provide SUPPORT and to discuss
-FEATURE REQUESTS.
-
-This repository is a "distribution" one, built by our release preparation script.
-Problems with it can be raised on our forum, or as issues in the main repository.
-
-## Server Requirements
-
-PHP version 7.4 or higher is required, with the following extensions installed:
-
-- [intl](http://php.net/manual/en/intl.requirements.php)
-- [mbstring](http://php.net/manual/en/mbstring.installation.php)
-
-> [!WARNING]
-> The end of life date for PHP 7.4 was November 28, 2022.
-> The end of life date for PHP 8.0 was November 26, 2023.
-> If you are still using PHP 7.4 or 8.0, you should upgrade immediately.
-> The end of life date for PHP 8.1 will be November 25, 2024.
-
-Additionally, make sure that the following extensions are enabled in your PHP:
-
-- json (enabled by default - don't turn it off)
-- [mysqlnd](http://php.net/manual/en/mysqlnd.install.php) if you plan to use MySQL
-- [libcurl](http://php.net/manual/en/curl.requirements.php) if you plan to use the HTTP\CURLRequest library
+![https://img.shields.io/badge/HTML5-E34F26.svg?&logo=HTML5&logoColor=white&style=flat-square](https://img.shields.io/badge/HTML5-E34F26.svg?&logo=HTML5&logoColor=white&style=flat-square)
+![https://img.shields.io/badge/CSS3-1572B6.svg?&logo=CSS3&logoColor=white&style=flat-square](https://img.shields.io/badge/CSS3-1572B6.svg?&logo=CSS3&logoColor=white&style=flat-square)
+![https://img.shields.io/badge/JavaScript-F7DF1E.svg?&logo=JavaScript&logoColor=black&style=flat-square](https://img.shields.io/badge/JavaScript-F7DF1E.svg?&logo=JavaScript&logoColor=black&style=flat-square)
+![https://img.shields.io/badge/Bootstrap-7952B3?logo=bootstrap&logoColor=fff&style=flat-square](https://img.shields.io/badge/Bootstrap-7952B3?logo=bootstrap&logoColor=fff&style=flat-square)
+![https://img.shields.io/badge/PHP-777BB4?logo=php&logoColor=fff&style=flat-square](https://img.shields.io/badge/PHP-777BB4?logo=php&logoColor=fff&style=flat-square)
+![CodeIgniter Badge](https://img.shields.io/badge/CodeIgniter-EF4223?logo=codeigniter&logoColor=fff&style=flat-square)
+![https://img.shields.io/badge/MySQL-4479A1?logo=mysql&logoColor=fff&style=flat-square](https://img.shields.io/badge/MySQL-4479A1?logo=mysql&logoColor=fff&style=flat-square)
+![https://img.shields.io/badge/Laragon-0E83CD?logo=laragon&logoColor=fff&style=flat-square](https://img.shields.io/badge/Laragon-0E83CD?logo=laragon&logoColor=fff&style=flat-square)
+![https://img.shields.io/badge/phpMyAdmin-6C78AF?logo=phpmyadmin&logoColor=fff&style=flat-square](https://img.shields.io/badge/phpMyAdmin-6C78AF?logo=phpmyadmin&logoColor=fff&style=flat-square)
